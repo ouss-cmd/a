@@ -1,0 +1,28 @@
+<h1> Liste de tous les salarié</h1>
+<hr>
+
+<table border=2 style="width:70%" id="t01">
+    <tr>
+         
+         <th> Nom</th>
+         <th> Prénom </th>
+         <th> Date de naissance </th>
+         <th>Email</th>
+         <th> Action </th>
+    </tr>
+
+    <tr *ngFor="let p of lesSalarie">
+      
+      <td>  {{p.Nom}} </td>
+      <td>  {{p.prenom}} </td>
+      <td>  {{p.date_n |date:'shortDate'}} </td>
+      <td>  {{p.email}} </td>
+      
+      <td>
+          <a class="uk-button uk-button-default" routerLink="supprimer/{{p.id}}">Supprimer</a>
+          <a class="uk-button uk-button-default" routerLink="modifier/{{p.id}}">Modifier</a>
+           
+      </td>
+
+    </tr>
+</table>
